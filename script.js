@@ -39,22 +39,33 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Programs Tab Functionality
+// Programs Tab Functionality - Optimized for speed
 document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabPanes = document.querySelectorAll('.tab-pane');
+    let activeButton = document.querySelector('.tab-btn.active');
+    let activePane = document.querySelector('.tab-pane.active');
 
     tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Skip if already active
+            if (button === activeButton) return;
+            
             const targetTab = button.getAttribute('data-tab');
+            const targetPane = document.getElementById(targetTab);
             
-            // Remove active class from all buttons and panes
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanes.forEach(pane => pane.classList.remove('active'));
+            // Fast class switching
+            if (activeButton) activeButton.classList.remove('active');
+            if (activePane) activePane.classList.remove('active');
             
-            // Add active class to clicked button and corresponding pane
             button.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
+            targetPane.classList.add('active');
+            
+            // Update references
+            activeButton = button;
+            activePane = targetPane;
         });
     });
 });

@@ -910,7 +910,7 @@ body.loaded {
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.15s ease;
 }
 
 .tab-btn.active,
@@ -921,10 +921,18 @@ body.loaded {
 
 .tab-pane {
     display: none;
+    opacity: 0;
 }
 
 .tab-pane.active {
     display: block;
+    opacity: 1;
+    animation: fadeInFast 0.2s ease-in-out;
+}
+
+@keyframes fadeInFast {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .program-detail {
@@ -4279,5 +4287,101 @@ body.loaded {
     
     .action-item {
         padding: 2rem;
+    }
+}
+/* Newspaper Cuttings Styles */
+.newspaper-cuttings {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.cuttings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.cutting-card {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+}
+
+.cutting-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+}
+
+.cutting-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cutting-card:hover img {
+    transform: scale(1.05);
+}
+
+.cutting-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.8), rgba(185, 28, 28, 0.6));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    text-align: center;
+}
+
+.cutting-card:hover .cutting-overlay {
+    opacity: 1;
+}
+
+.cutting-overlay i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cutting-overlay span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Mobile Responsive for Newspaper Cuttings */
+@media (max-width: 768px) {
+    .cuttings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .cutting-card {
+        aspect-ratio: 2/3;
+    }
+    
+    .cutting-overlay i {
+        font-size: 2rem;
+    }
+    
+    .cutting-overlay span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cuttings-grid {
+        grid-template-columns: 1fr;
     }
 }
