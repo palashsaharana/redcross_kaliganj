@@ -2460,6 +2460,8 @@ body.loaded {
     margin-right: auto;
 }
 
+
+
 .program-intro h2 {
     font-size: 2.5rem;
     color: #dc2626;
@@ -2598,13 +2600,15 @@ body.loaded {
     background: #f8f9fa;
     padding: 5rem 0;
     margin: 5rem -20px;
-    border-radius: 15px;
 }
 
 .details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .detail-card {
@@ -3864,7 +3868,6 @@ body.loaded {
 }
 
 .program-content {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
