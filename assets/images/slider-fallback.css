@@ -1,0 +1,28 @@
+/* Fallback styles for slider images */
+.slide:nth-child(1) .slide-bg {
+    background-image: 
+        url('programs/Blood Donation camp/IMG-20250730-WA0006.jpg'),
+        linear-gradient(135deg, #dc2626, #b91c1c),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23dc2626"/><text x="960" y="400" text-anchor="middle" fill="white" font-size="48" font-family="Arial">Blood Donation</text></svg>');
+}
+
+.slide:nth-child(2) .slide-bg {
+    background-image: 
+        url('programs/Child Vaccinations /IMG-20250814-WA0020.jpg'),
+        linear-gradient(135deg, #059669, #047857),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23059669"/><text x="960" y="400" text-anchor="middle" fill="white" font-size="48" font-family="Arial">Health Services</text></svg>');
+}
+
+.slide:nth-child(3) .slide-bg {
+    background-image: 
+        url('programs/Disaster management /IMG-20230113-WA0036.jpg'),
+        linear-gradient(135deg, #dc2626, #991b1b),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%23dc2626"/><text x="960" y="400" text-anchor="middle" fill="white" font-size="48" font-family="Arial">Emergency Response</text></svg>');
+}
+
+.slide:nth-child(4) .slide-bg {
+    background-image: 
+        url('programs/Yoga /IMG-20230623-WA0004.jpg'),
+        linear-gradient(135deg, #7c3aed, #5b21b6),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800"><rect width="1920" height="800" fill="%237c3aed"/><text x="960" y="400" text-anchor="middle" fill="white" font-size="48" font-family="Arial">Youth Programs</text></svg>');
+}
