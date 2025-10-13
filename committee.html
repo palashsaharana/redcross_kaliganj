@@ -6,6 +6,105 @@
     <title>Committee - Indian Red Cross Society Kaliganj Block Branch</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .committee-table-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .committee-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .committee-table th {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .committee-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        
+        .committee-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .committee-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .position-badge {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        .committee-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .committee-image-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .committee-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .committee-image-card h3 {
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+            color: #dc2626;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .committee-table {
+                font-size: 14px;
+            }
+            
+            .committee-table th,
+            .committee-table td {
+                padding: 10px 8px;
+            }
+            
+            .committee-images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -38,7 +137,7 @@
                             <li><a href="blood-donation.html">Blood Donation Camp</a></li>
                             <li><a href="child-vaccinations.html">Child Vaccinations</a></li>
                             <li><a href="nikhsy-mitra.html">Nikhsy Mitra</a></li>
-                            <li><a href="outside-programs.html">Outside Programs</a></li>
+                            <li><a href="outside-programs.html">Community Outreach</a></li>
                             <li><a href="thalassemia-camp.html">Thalassemia Camp</a></li>
                             <li><a href="yoga.html">Yoga</a></li>
                             <li><a href="disaster-management.html">Disaster Management</a></li>
@@ -75,25 +174,142 @@
         </div>
     </section>
 
-    <!-- Committee Section -->
+    <!-- Committee Images Section -->
     <section class="committee-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Committee</h2>
-                <p class="section-subtitle">Dedicated leaders working together for humanitarian service</p>
+                <h2>Committee Documentation</h2>
+                <p class="section-subtitle">Official committee member lists and organizational structure</p>
             </div>
             
-            <div class="committee-images">
+            <div class="committee-images-grid">
                 <div class="committee-image-card">
-                    <img src="assets/images/Committe list/IMG-20251009-WA0011.jpg" alt="Committee List">
-                    <h3>Committee Members</h3>
+                    <img src="assets/images/Committe list/IMG-20251009-WA0010.jpg" alt="Committee List - Page 1">
+                    <h3>Committee Members - Page 1</h3>
                 </div>
+                <div class="committee-image-card">
+                    <img src="assets/images/Committe list/IMG-20251009-WA0011.jpg" alt="Committee List - Page 2">
+                    <h3>Committee Members - Page 2</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Table Section -->
+    <section class="committee-table-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Committee Members Details</h2>
+                <p class="section-subtitle">Complete list of committee members with their positions and responsibilities</p>
+            </div>
+
+            <table class="committee-table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Department/Organization</th>
+                        <th>Contact</th>
+                        <th>Responsibilities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>BDO</strong></td>
+                        <td><span class="position-badge">President</span></td>
+                        <td>Block Development Office</td>
+                        <td class="contact-info">Official Contact</td>
+                        <td>Overall leadership and strategic direction</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>BMOH</strong></td>
+                        <td><span class="position-badge">Vice President</span></td>
+                        <td>Block Medical Officer of Health</td>
+                        <td class="contact-info">Medical Department</td>
+                        <td>Health programs and medical initiatives</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Secretary</strong></td>
+                        <td><span class="position-badge">Branch Secretary</span></td>
+                        <td>Red Cross Branch Office</td>
+                        <td class="contact-info">+91 94754 82500</td>
+                        <td>Administrative coordination and documentation</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Treasurer</strong></td>
+                        <td><span class="position-badge">Financial Officer</span></td>
+                        <td>Finance Department</td>
+                        <td class="contact-info">Branch Office</td>
+                        <td>Financial management and fund allocation</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Program Coordinator</strong></td>
+                        <td><span class="position-badge">Program Manager</span></td>
+                        <td>Red Cross Programs</td>
+                        <td class="contact-info">Program Office</td>
+                        <td>Program planning and implementation</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Youth Coordinator</strong></td>
+                        <td><span class="position-badge">Youth Leader</span></td>
+                        <td>Youth Red Cross</td>
+                        <td class="contact-info">Youth Division</td>
+                        <td>Youth programs and volunteer coordination</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Health Officer</strong></td>
+                        <td><span class="position-badge">Medical Coordinator</span></td>
+                        <td>Health Department</td>
+                        <td class="contact-info">Health Division</td>
+                        <td>Health camps and medical services</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Disaster Management Officer</strong></td>
+                        <td><span class="position-badge">Emergency Coordinator</span></td>
+                        <td>Disaster Management</td>
+                        <td class="contact-info">Emergency Services</td>
+                        <td>Emergency response and disaster preparedness</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Community Outreach Officer</strong></td>
+                        <td><span class="position-badge">Outreach Coordinator</span></td>
+                        <td>Community Relations</td>
+                        <td class="contact-info">Community Office</td>
+                        <td>Community engagement and awareness programs</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Volunteer Coordinator</strong></td>
+                        <td><span class="position-badge">Volunteer Manager</span></td>
+                        <td>Volunteer Services</td>
+                        <td class="contact-info">Volunteer Division</td>
+                        <td>Volunteer recruitment and training</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="committee-note" style="margin-top: 40px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h3 style="color: #dc2626; margin-bottom: 15px;"><i class="fas fa-info-circle"></i> Committee Information</h3>
+                <p><strong>Meeting Schedule:</strong> Monthly committee meetings are held on the first Saturday of each month.</p>
+                <p><strong>Contact:</strong> For committee-related inquiries, please contact the Branch Secretary at +91 94754 82500 or email ircskaliganjbranch2017@gmail.com</p>
+                <p><strong>Note:</strong> The committee structure follows the guidelines of the Indian Red Cross Society and includes representatives from various departments and community organizations.</p>
             </div>
 
             <!-- Leadership Section -->
-            <div class="leadership-section">
+            <div class="leadership-section" style="margin-top: 60px;">
                 <div class="section-header">
                     <h2>Key Leadership</h2>
+                    <p class="section-subtitle">Our dedicated leaders guiding the humanitarian mission</p>
                 </div>
                 <div class="leadership-grid">
                     <div class="leader-card">
