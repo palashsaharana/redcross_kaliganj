@@ -2605,6 +2605,30 @@ body.loaded {
     border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: 90%;
+        max-height: 80vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .modal-image {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+    
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
 .close {
     position: absolute;
     top: 20px;
@@ -2920,11 +2944,14 @@ body.loaded {
         flex-direction: column;
         background-color: white;
         width: 100%;
+        height: calc(100vh - 80px);
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0,0,0,0.05);
         padding: 2rem 0;
         gap: 1.5rem;
+        overflow-y: auto;
+        z-index: 999;
     }
     
     .dropdown-menu {
@@ -2955,6 +2982,13 @@ body.loaded {
         gap: 1rem;
     }
     
+    .hero-buttons .btn {
+        width: 200px;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
     .slider-nav {
         padding: 0 1rem;
     }
@@ -2966,6 +3000,16 @@ body.loaded {
     
     .prev-btn i, .next-btn i {
         font-size: 1rem;
+    }
+    
+    .prev-btn, .next-btn {
+        background: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        color: #dc2626;
+    }
+    
+    .slider-nav {
+        top: 70%;
     }
     
     .slider-indicators {
@@ -3034,6 +3078,11 @@ body.loaded {
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-section {
+        margin: 3rem -20px;
+        padding: 2rem;
     }
     
     .page-header h1 {
@@ -3149,6 +3198,51 @@ body.loaded {
     .activity-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    /* Committee Table Mobile Styles */
+    .committee-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .committee-table thead {
+        display: none;
+    }
+    
+    .committee-table tbody {
+        display: block;
+    }
+    
+    .committee-table tr {
+        display: block;
+        border: 1px solid #e5e7eb;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        padding: 1rem;
+        background: white;
+        white-space: normal;
+    }
+    
+    .committee-table td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: 0.5rem 0;
+    }
+    
+    .committee-table td:before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+        color: #dc2626;
+        display: inline-block;
+        width: 120px;
+    }
+    
+    .committee-images-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 }
 /* Certificate Categories */
