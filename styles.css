@@ -1026,6 +1026,7 @@ body.loaded {
     font-size: 1.5rem;
     color: #dc2626;
     margin-top: 0.2rem;
+    min-width: 24px;
 }
 
 .contact-form {
@@ -1068,6 +1069,104 @@ body.loaded {
 .contact-form button:hover {
     background: #b91c1c;
     transform: translateY(-2px);
+}
+
+/* Contact Page Social Links */
+.contact-item .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-item .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #f8f9fa;
+    color: #666 !important;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-item .social-links a:hover {
+    background: #dc2626 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.contact-item .social-links a i {
+    font-size: 1.1rem;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .contact-item .social-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .contact-item .social-links a {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Floating Social Media */
+.floating-social {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-float {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.social-float.facebook {
+    background: #1877f2;
+}
+
+.social-float.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .floating-social {
+        right: 15px;
+        gap: 8px;
+    }
+    
+    .social-float {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
 }
 
 /* Footer */
