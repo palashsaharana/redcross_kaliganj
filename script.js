@@ -168,15 +168,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const activeSlide = document.querySelector('.slide.active .slide-bg');
-    if (activeSlide) {
-        const speed = scrolled * 0.3;
-        activeSlide.style.transform = `translateY(${speed}px)`;
-    }
-});
+// Parallax effect for hero section (disabled on mobile to prevent issues)
+if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const activeSlide = document.querySelector('.slide.active .slide-bg');
+        if (activeSlide && scrolled < window.innerHeight) {
+            const speed = scrolled * 0.2;
+            activeSlide.style.transform = `translateY(${speed}px)`;
+        }
+    });
+}
 
 // Add loading animation
 window.addEventListener('load', () => {
@@ -187,6 +189,7 @@ window.addEventListener('load', () => {
 let currentSlideIndex = 0;
 let slides, indicators, totalSlides;
 let slideInterval = null;
+let isTransitioning = false;
 
 // Initialize slider when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -195,21 +198,66 @@ document.addEventListener('DOMContentLoaded', function() {
     totalSlides = slides.length;
     
     if (slides.length > 0) {
-        showSlide(0);
-        startAutoSlide();
+        // Ensure first slide is visible immediately
+        slides[0].style.opacity = '1';
+        slides[0].style.visibility = 'visible';
+        slides[0].classList.add('active');
+        
+        if (indicators[0]) {
+            indicators[0].classList.add('active');
+        }
+        
+        // Preload all slide images
+        preloadSlideImages();
+        
+        // Start auto slide after a short delay
+        setTimeout(() => {
+            startAutoSlide();
+        }, 1000);
+        
         setupEventListeners();
     }
 });
 
+function preloadSlideImages() {
+    slides.forEach(slide => {
+        const slideBg = slide.querySelector('.slide-bg');
+        if (slideBg) {
+            const bgImage = slideBg.style.backgroundImage;
+            if (bgImage) {
+                const imageUrl = bgImage.slice(4, -1).replace(/"/g, "");
+                const img = new Image();
+                img.src = imageUrl;
+            }
+        }
+    });
+}
+
 function showSlide(index) {
-    if (!slides || !indicators) return;
+    if (!slides || !indicators || isTransitioning) return;
     
-    slides.forEach(slide => slide.classList.remove('active'));
+    isTransitioning = true;
+    
+    // Remove active class from all slides and indicators
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+        slide.style.opacity = '0';
+        slide.style.visibility = 'hidden';
+    });
     indicators.forEach(indicator => indicator.classList.remove('active'));
     
+    // Add active class to current slide and indicator
     if (slides[index] && indicators[index]) {
-        slides[index].classList.add('active');
-        indicators[index].classList.add('active');
+        setTimeout(() => {
+            slides[index].classList.add('active');
+            slides[index].style.opacity = '1';
+            slides[index].style.visibility = 'visible';
+            indicators[index].classList.add('active');
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 100);
+        }, 50);
     }
     
     currentSlideIndex = index;
@@ -238,6 +286,8 @@ function stopAutoSlide() {
 }
 
 function changeSlide(direction) {
+    if (isTransitioning) return;
+    
     stopAutoSlide();
     
     if (direction === 1) {
@@ -246,13 +296,20 @@ function changeSlide(direction) {
         prevSlide();
     }
     
-    startAutoSlide();
+    setTimeout(() => {
+        startAutoSlide();
+    }, 500);
 }
 
 function currentSlide(index) {
+    if (isTransitioning) return;
+    
     stopAutoSlide();
     showSlide(index - 1);
-    startAutoSlide();
+    
+    setTimeout(() => {
+        startAutoSlide();
+    }, 500);
 }
 
 function setupEventListeners() {
