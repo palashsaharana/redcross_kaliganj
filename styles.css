@@ -195,6 +195,10 @@ body.loaded {
     background-color: #f8f9fa;
 }
 
+.slide-bg[style*="IMG-20251013-WA0006.jpg"] {
+    background-position: center bottom;
+}
+
 .slide-bg::before {
     content: '';
     position: absolute;
@@ -1149,6 +1153,10 @@ body.loaded {
 
 .social-float.instagram {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-float.youtube {
+    background: #ff0000;
 }
 
 .social-float:hover {
