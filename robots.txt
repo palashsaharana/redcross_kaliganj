@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redcrosskaliganj.org/sitemap.xml
+
+# Priority pages for Red Cross Kaliganj Block
+Allow: /index.html
+Allow: /about.html
+Allow: /blood-donation.html
+Allow: /contact.html
+Allow: /donate.html
